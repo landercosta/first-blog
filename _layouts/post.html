@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section class="post">
+  <article>
+      <h2>{{ page.title | escape }}</h2>
+      <p>
+        {% if page.date %}
+        <time datetime="{{ page.date | date_to_xmlschema }}" class="date">{{ page.date | date: '%d/%m/%Y' }}</time>
+        {% endif %}
+      </p>
+    {{ content }}
+  </article>
+</section>
+{% include comments.html %}
